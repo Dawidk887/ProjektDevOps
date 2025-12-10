@@ -25,7 +25,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Zbuduj aplikajce dockerowa 
-       run: docker compose up -d --build
+        run: docker compose up -d --build
        
-       - name: Check running containers
+      - name: Check running containers
         run: docker ps -a
