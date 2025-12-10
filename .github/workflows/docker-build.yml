@@ -1,0 +1,17 @@
+name: Sprawdz tworzenie kontenera 
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+
+jobs:
+  docker-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Sprawdz repozytorium
+        uses: actions/checkout@v4
+
+      - name: Zbuduj obraz dockerowy 
+        run: docker build -t spring-boot-app .
